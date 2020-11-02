@@ -1,0 +1,18 @@
+В проекте есть:
+        1) микросервис api_server/
+        2) микросервис db_server/
+        3) запросы sql для создания таблиц и их заполнения makeSqlTables/
+        4) общая библиотека /sharedLib
+
+В микросервисе используется MySQL, для настройки нужно указать конфиги в db_server/internal/config/config.go
+В api_server/cmd/api_server.go для каждого обработчика есть пример для запроса в Postman
+
+Для запуска микросервиса с бд:
+    go run db_server/cmd/db_server.go > db_log.txt | grep cat
+
+Для запуска микросервиса с API:
+    go run api_server/cmd/api_server.go > api_log.txt | grep cat
+
+Логи будут записываться в ../rpc/
+                                db_log.txt
+                                api_log.txt
